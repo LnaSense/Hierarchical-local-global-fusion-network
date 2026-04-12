@@ -33,7 +33,7 @@ We also release LaraS2R, a large-range Sim2Real-paired dataset constructed for f
 
 The LaraS2R dataset is available at:
 
-[Release v1.0](https://github.com/LnaSense/Hierarchical-local-global-fusion-network/releases/tag/v1.0)
+https://github.com/LnaSense/Hierarchical-local-global-fusion-network/releases/tag/v1.0
 
 ## Citation
 
