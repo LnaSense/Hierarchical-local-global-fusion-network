@@ -37,4 +37,4 @@ https://github.com/LnaSense/Hierarchical-local-global-fusion-network/releases/ta
 
 ## Citation
 
-If you find this repository useful, please cite our paper.
+If you find this repository useful in your research, please cite the corresponding paper.
