@@ -17,6 +17,8 @@ This repository includes:
 - training code for FMR-Net,
 - access information for the LaraS2R dataset.
 
+This project is developed in a Conda environment, using Python 3.10, PyTorch 2.9.1, and CUDA 12.6. Detailed environment configuration can be found in `environment.yml`.
+
 ## Code
 
 - `Forward_MLP.py`: script for training the forward MLP model.
