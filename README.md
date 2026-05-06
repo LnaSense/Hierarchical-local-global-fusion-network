@@ -13,8 +13,8 @@ The proposed framework combines:
 - global-constrained refinement that improves the physical consistency of the reconstructed force map under wide-range contact conditions.
 
 This repository includes:
-- training code for the forward MLP model,
-- training code for FMR-Net,
+- code for the forward MLP model,
+- code for FMR-Net,
 - access information for the LaraS2R dataset.
 
 This project is developed in a Conda environment, using Python 3.10, PyTorch 2.9.1, and CUDA 12.6. Detailed environment configuration can be found in `environment.yml`.
