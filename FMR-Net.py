@@ -7,12 +7,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset, random_split
 
-def compute_force_and_torque(coords, forces):
-    total_force = forces.sum(dim=2)
-    total_torque = torch.cross(coords, forces, dim=1).sum(dim=2)
-    return torch.cat([total_force, total_torque], dim=1)
-
-
 class DWConv(nn.Module):
     def __init__(self, c, k=7):
         super().__init__()
@@ -120,12 +114,12 @@ class DualBranchBlock(nn.Module):
 
 
 class ForceRefineNet(nn.Module):
-    def __init__(self, deform_in_ch, global_dim=6, base=48, num_global_tokens=4):
+    def __init__(self, deform_in_ch, global_dim, base, num_global_tokens):
         super().__init__()
         g_dim = base * 4
 
         self.force_stem = nn.Sequential(
-            nn.Conv2d(3, base, 3, padding=1),
+            nn.Conv2d(3, base, 3),
             nn.GroupNorm(8, base),
             nn.SiLU(inplace=True),
         )
@@ -152,7 +146,7 @@ class ForceRefineNet(nn.Module):
         )
 
         self.deform_stem = nn.Sequential(
-            nn.Conv2d(deform_in_ch, base, 3, padding=1),
+            nn.Conv2d(deform_in_ch, base, 3),
             nn.GroupNorm(8, base),
             nn.SiLU(inplace=True),
         )
@@ -240,6 +234,6 @@ class ForceRefineNet(nn.Module):
         delta_global = self.head_global_out(pooled * self.head_g_proj(g)).view(b, 3, 1, 1)
 
         f_out = f_init + delta_local + delta_global
-        t_pred = compute_force_and_torque(coords.reshape(b, 3, h * w), f_out.reshape(b, 3, h * w))
-        return f_out, t_pred
+        
+        return f_out
 
