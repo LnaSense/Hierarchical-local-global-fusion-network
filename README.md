@@ -12,11 +12,6 @@ The proposed framework combines:
 - local estimation that captures and estimates fine-scale tactile deformation cues
 - global-constrained refinement that improves the physical consistency of the reconstructed force map under wide-range contact conditions.
 
-## Code
-
-- `Forward_MLP.py`: script for training the forward MLP model.
-- `FMR-Net.py`: script for training the proposed force-map refinement network (FMR-Net).
-
 ## Dataset
 
 We also release LaraS2R, a large-range Sim2Real-paired dataset constructed for force-map reconstruction. The dataset is available on request.
