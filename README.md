@@ -14,7 +14,7 @@ The proposed framework combines:
 
 ## Dataset
 
-We also release LaraS2R, a large-range Sim2Real-paired dataset constructed for force-map reconstruction. The dataset is available on request.
+A large-range Sim2Real-paired dataset constructed for force-map reconstruction is available on request.
 
 ## Citation
 
